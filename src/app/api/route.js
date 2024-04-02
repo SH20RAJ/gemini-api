@@ -1,8 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextResponse } from "next/server";
+require('dotenv').config()
 
-// Access your API key (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI("AIzaSyCXTVHIyCWBioY2mq6NtfPMcJqdkjOFleU");
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API);
 
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\\[\]]/g, '\\$&');
