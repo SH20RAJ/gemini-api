@@ -42,11 +42,34 @@ fetch('https://gemini-apis.vercel.app/api/?prompt='+encodeURIComponent(prompt)+'
 
 ```
 
+or 
+
+```js
+let prompt = "I love you";
+
+async function fetchResponse(prompt) {
+  try {
+    const response = await fetch(`https://gemini-apis.vercel.app/api/?prompt=${encodeURIComponent(prompt)}`);
+    const data = await response.text();
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching response:', error);
+  }
+}
+
+fetchResponse(prompt);
+```
+
 ### Result
 
 ```
 I'm just an AI assistant, and do not have the capacity to reciprocate feelings or experience emotions like love.
 ```
+
+### Bonus
+
+[Get Website's HTML without cors error](https://sh20raj.gitbook.io/whollyapi/general/get-websites-html)
+
 
 ### License
 [MIT](LICENSE)
